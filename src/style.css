@@ -1,0 +1,190 @@
+.container {
+  display: block;
+  position: absolute;
+  height: 1000px;
+  width: 1000px;
+}
+svg {
+  display: block;
+  position: absolute;
+
+  height: 1000px;
+  width: 1000px;
+}
+
+.main {
+  fill: none;
+  stroke: #93caf9;
+  stroke-width: 3px;
+}
+.hourly {
+  fill: none;
+  stroke: #f3e4f6;
+  stroke-width: 1.5px;
+}
+.wind {
+  fill: white;
+  stroke: #cf93d7;
+}
+.humidity {
+  fill: white;
+  stroke: #cf93d7;
+}
+.temp {
+  fill: none;
+  stroke: #41a5f5;
+  stroke-width: 2.5px;
+}
+
+form {
+  position: relative;
+  top: 257px;
+  left: 380px;
+  
+}
+
+h1 {
+  position: relative;
+
+  top: 128px;
+  left: 465px;
+}
+
+h1 {
+  color: #006ec5;
+}
+h3 {
+  position: relative;
+
+  color: #ab47bc;
+  top: 130px;
+  left: 380px;
+}
+
+.wind2 {
+  position: relative;
+  font-size: 18px;
+  left: 200px;
+  top: 280px;
+}
+
+.humidity2 {
+  position: relative;
+  left: 745px;
+  top: 245px;
+}
+
+.wind3 {
+  position: relative;
+  font-size: 60px;
+  left: 135px;
+  top: 110px;
+}
+
+.humidity3 {
+  position: relative;
+  font-size: 60px;
+  left: 800px;
+  top: 185px;
+}
+
+.temp1 .temp1-emoji {
+  font-size: 75px;
+  position: relative;
+  left: 460px;
+  top: 15px;
+}
+
+.temp1 .temp1-val {
+  font-size: 90px;
+  position: relative;
+  left: 450px;
+  top: 10px;
+  color: orange;
+}
+
+.temp1 .temp1-unit {
+  position: relative;
+  font-size: 30px;
+  color: lightgray;
+  top: 10px;
+  left: 475px;
+}
+
+.hourly-temp1 .emoji {
+  position: relative;
+  font-size: 30px;
+  left: 185px;
+  top: -65px;
+}
+
+.hourly-temp1 .time {
+  position: relative;
+  left: 180px;
+  top: -75px;
+}
+
+.hourly-temp2 .emoji {
+  position: relative;
+  font-size: 30px;
+  left: 295px;
+  top: -20px;
+}
+
+.hourly-temp2 .time {
+  position: relative;
+  left: 295px;
+  top: -25px;
+}
+
+.hourly-temp3 .emoji {
+  position: relative;
+  font-size: 30px;
+  left: 485px;
+  top: -55px;
+}
+
+.hourly-temp3 .time {
+  position: relative;
+  left: 485px;
+  top: -65px;
+}
+
+.hourly-temp4 .emoji {
+  position: relative;
+  font-size: 30px;
+  left: 675px;
+  top: -220px;
+}
+
+.hourly-temp4 .time {
+  position: relative;
+  left: 675px;
+  top: -230px;
+}
+
+.hourly-temp5 .emoji {
+  position: relative;
+  font-size: 30px;
+  left: 785px;
+  top: -475px;
+}
+
+.hourly-temp5 .time {
+  position: relative;
+  left: 785px;
+  top: -480px;
+}
+
+.currentLoc {
+  display: block;
+  position: relative;
+  font-size: 20px;
+  left: 629px;
+  top: -857px;
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 5px;
+  background-color: paleturquoise;
+  border-width: 0.15ch;
+}
