@@ -88,7 +88,7 @@ function displayF(event) {
   let cityName = document.querySelector("#cityname");
   if (cityName.innerHTML === "Your Location") {
     let tempVal = document.querySelector(".temp1-val");
-    tempVal.value = (tempVal.value * 9) / 5 + 32;
+    tempVal.value = Math.round((tempVal.value * 9) / 5 + 32);
     tempVal.innerHTML = tempVal.value;
   } else {
     updateTempF(cityName.innerHTML);
