@@ -74,6 +74,7 @@ function updatecity(event) {
 
   updateDate();
   updateTemp(newCityName.value);
+  updateHourly(newCityName.value);
 }
 
 let locationForm = document.querySelector("#location-form");
@@ -132,3 +133,58 @@ function displayLocation(event) {
 }
 let button = document.querySelector(".currentLoc");
 button.addEventListener("click", displayLocation);
+
+// updating hourly forcast
+
+function updateHourlyHelper2(response) {
+  console.log(response);
+
+  // Changing the icon for current time
+  let currentIcon = document.querySelector(".temp1-emoji");
+  let iconCode = response.data.current.weather[0].icon;
+  let iconLink = `http://openweathermap.org/img/wn/${iconCode}.png`;
+  currentIcon.innerHTML = `<img src=${iconLink} />`;
+
+  // Changing the icon for 12 pm
+  let hourlyIcon1 = document.querySelector(".hourly-temp1 .emoji");
+  let iconCode1 = response.data.hourly[11].weather[0].icon;
+  let iconLink1 = `http://openweathermap.org/img/wn/${iconCode1}.png`;
+  hourlyIcon1.innerHTML = `<img src=${iconLink1} />`;
+
+  // Changing the icon for 3 pm
+  let hourlyIcon2 = document.querySelector(".hourly-temp2 .emoji");
+  let iconCode2 = response.data.hourly[14].weather[0].icon;
+  let iconLink2 = `http://openweathermap.org/img/wn/${iconCode2}.png`;
+  hourlyIcon2.innerHTML = `<img src=${iconLink2} />`;
+
+  // Changing the icon for 6 pm
+  let hourlyIcon3 = document.querySelector(".hourly-temp3 .emoji");
+  let iconCode3 = response.data.hourly[17].weather[0].icon;
+  let iconLink3 = `http://openweathermap.org/img/wn/${iconCode3}.png`;
+  hourlyIcon3.innerHTML = `<img src=${iconLink3} />`;
+
+  // Changing the icon for 9 pm
+  let hourlyIcon4 = document.querySelector(".hourly-temp4 .emoji");
+  let iconCode4 = response.data.hourly[20].weather[0].icon;
+  let iconLink4 = `http://openweathermap.org/img/wn/${iconCode4}.png`;
+  hourlyIcon4.innerHTML = `<img src=${iconLink4} />`;
+
+  // Changing the icon for 11 pm
+  let hourlyIcon5 = document.querySelector(".hourly-temp5 .emoji");
+  let iconCode5 = response.data.hourly[23].weather[0].icon;
+  let iconLink5 = `http://openweathermap.org/img/wn/${iconCode5}.png`;
+  hourlyIcon5.innerHTML = `<img src=${iconLink5} />`;
+}
+function updateHourlyHelper1(response) {
+  let apiKey = "88a78e66d2f90d07860c0aa03d94e774";
+  let lat = response.data[0].lat;
+  let lon = response.data[0].lon;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(updateHourlyHelper2);
+}
+
+function updateHourly(cityName) {
+  let apiKey = "88a78e66d2f90d07860c0aa03d94e774";
+  let apiUrlloc = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;
+  axios.get(apiUrlloc).then(updateHourlyHelper1);
+}
