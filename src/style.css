@@ -1,8 +1,10 @@
 .container {
   display: block;
-  position: fixed;
+  position: relative;
   height: 1000px;
   width: 1000px;
+  left: -400px;
+  text-align: center;
 }
 svg {
   display: block;
@@ -37,27 +39,26 @@ svg {
 }
 
 form {
-  position: fixed;
+  position: relative;
+  text-align: center;
   top: 257px;
-  left: 361px;
 }
 
 h1 {
-  position: fixed;
-
+  position: relative;
+  text-align: center;
   top: 128px;
-  left: 465px;
 }
 
 h1 {
   color: #006ec5;
 }
 h3 {
-  position: fixed;
-
+  position: relative;
+  text-align: center;
+  top: 170px;
   color: #ab47bc;
-  top: 200px;
-  left: 380px;
+  top: 123px;
 }
 
 .wind2 {
@@ -177,10 +178,10 @@ h3 {
 
 .currentLoc {
   display: block;
-  position: fixed;
+  position: relative;
   font-size: 20px;
-  top: 257px;
-  left: 610px;
+  top: 162px;
+  left: 450px;
   font-family: inherit;
   font-size: inherit;
   border-radius: 5px;
