@@ -47,15 +47,15 @@ form {
 h1 {
   position: relative;
   text-align: center;
+  text-transform: capitalize;
   top: 128px;
-}
-
-h1 {
   color: #006ec5;
 }
+
 h3 {
   position: relative;
   text-align: center;
+  text-transform: capitalize;
   top: 170px;
   color: #ab47bc;
   top: 123px;
