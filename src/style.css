@@ -99,8 +99,18 @@ h3 {
   font-size: 90px;
   position: fixed;
   left: 460px;
-  top: 450px;
+  top: 430px;
   color: orange;
+}
+
+.description {
+  position: fixed;
+
+  font-size: 15px;
+  color: black;
+  top: 550px;
+  left: 450px;
+  text-transform: capitalize;
 }
 
 .temp1 .temp1-unit {
@@ -108,7 +118,7 @@ h3 {
   font-size: 30px;
   color: lightgray;
   top: 575px;
-  left: 486px;
+  left: 475px;
 }
 
 .hourly-temp1 .emoji {

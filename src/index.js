@@ -37,9 +37,11 @@ function updateDate() {
 // Update tempmerature metric
 
 function updateTempHelper(response) {
+  console.log(response.data.weather[0].description);
   let temp = Math.round(response.data.main.temp);
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
+  let description = response.data.weather[0].description;
 
   let tempVal = document.querySelector(".temp1-val");
   tempVal.innerHTML = `${temp}`;
@@ -50,6 +52,9 @@ function updateTempHelper(response) {
 
   let humVal = document.querySelector(".humidity2");
   humVal.innerHTML = `${humidity}%`;
+
+  let descrVal = document.querySelector(".description");
+  descrVal.innerHTML = `${description}`;
 }
 function updateTemp(cityName) {
   let apiKey = "88a78e66d2f90d07860c0aa03d94e774";
