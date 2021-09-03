@@ -37,7 +37,7 @@ function updateDate() {
 // Update tempmerature metric
 
 function updateTempHelper(response) {
-  console.log(response.data.weather[0].description);
+  console.log(response);
   let temp = Math.round(response.data.main.temp);
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
@@ -118,27 +118,6 @@ function displayC(event) {
 let celcius = document.querySelector("#celcius");
 celcius.addEventListener("click", displayC);
 
-// A function that gets the waether of a current GPS location
-
-function upDateLocal(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiKey = "88a78e66d2f90d07860c0aa03d94e774";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-  let cityName = document.querySelector("#cityname");
-  cityName.innerHTML = "Your Location";
-  axios.get(apiUrl).then(updateTempHelper);
-}
-// A function that gets the client's location
-
-function displayLocation(event) {
-  event.preventDefault();
-
-  navigator.geolocation.getCurrentPosition(upDateLocal);
-}
-let button = document.querySelector(".currentLoc");
-button.addEventListener("click", displayLocation);
-
 // updating hourly forcast
 
 function updateHourlyHelper2(response) {
@@ -185,7 +164,8 @@ function updateHourlyHelper1(response) {
   let lat = response.data[0].lat;
   let lon = response.data[0].lon;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-  axios.get(apiUrl).then(updateHourlyHelper2);
+
+  https: axios.get(apiUrl).then(updateHourlyHelper2);
 }
 
 function updateHourly(cityName) {
@@ -193,3 +173,26 @@ function updateHourly(cityName) {
   let apiUrlloc = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;
   axios.get(apiUrlloc).then(updateHourlyHelper1);
 }
+
+// A function that gets the waether of a current GPS location
+
+function upDateLocal(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = "88a78e66d2f90d07860c0aa03d94e774";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let apiUrl2 = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  let cityName = document.querySelector("#cityname");
+  cityName.innerHTML = "Your Location";
+  axios.get(apiUrl).then(updateTempHelper);
+  axios.get(apiUrl2).then(updateHourlyHelper2);
+}
+// A function that gets the client's location
+
+function displayLocation(event) {
+  event.preventDefault();
+
+  navigator.geolocation.getCurrentPosition(upDateLocal);
+}
+let button = document.querySelector(".currentLoc");
+button.addEventListener("click", displayLocation);
